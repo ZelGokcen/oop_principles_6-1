@@ -1,0 +1,135 @@
+
+
+04-04-2023 - OOP Part 1 - Class & Object
+
+Class vs Object
+-Class can be created <class> keyword
+-Class is something that we can create mant Object from.
+-Class is a blueprint-template while object is an instance of a class.
+
+Object: instance of a class
+
+NOTE: We can create unlimited numbers of objects (instances) from a class.
+
+SYNTAX:
+class MathHelper{
+	
+}
+
+MathHelper mh = new MathHelper(); // Instance or Object
+
+
+-Java classes -> Scanner, String, Wrappers, Arrays, ArrayList, Random
+
+class String{
+	//many members
+}
+
+
+String name = "John";
+String address = "Chicago";
+
+
+-class members:
+		constructor: allows us to create objects
+		methods: behaviors 
+		instance variables - fields - states - attributes
+		blocks
+
+
+
+class: House
+
+public class House{
+	//instance variables
+	String color;
+	int year;
+	String address;
+	double price;
+}
+
+
+// House{color='null', year='0', address='null', price='0.0'}
+
+House house1 = new House(); 
+house1.color = "Purple";
+house1.year = 1990;
+house1.address = "Chicago";
+house1.price = 300000;
+
+// House{color='purple', year='1990', address='null', price='300000.0'}
+
+
+DEFAULT VALUES:
+Objects 	-> null
+int 		-> 0
+boolean 	-> false
+double 		-> 0.0
+
+
+CAN WE UPDATE THE DEFAULT VALUES FOR INSTANCE VARIABLES?
+color not null but White
+
+
+
+What does a house have?
+Each house should have below information, and it will be different for each house.
+
+color 	-> String
+year 	-> int
+address -> String
+price 	-> double
+numberOfRooms 	-> int
+largeWindows 	-> boolean
+hasGarden		-> boolean
+parkingLot 		-> int
+sqft 			-> int 
+
+
+
+
+WHY DO WE OVERRIDE toString() method?
+-When you have a template class and create objects from it, you will get object memory address if you print it.
+-HOWEVER, if you would like to see object instance variables values, then you need to override toString() method
+	1. Right click in proper line in your template class
+	2. Select Generate option
+	3. Select toString() option
+	4. Select all the instance variables from the window
+	5. Click OK
+
+
+
+//Creating a new Object
+-We use <new> keyword to create an object
+-<new> keyword always used together with a constructor to create an object
+-constructor is a special method used to instantiate an object of a class
+-constructor always has the same name as the class
+-Java always provide a default constructor when you create a class (hidden)
+-Once you create a custom constructor (overloaded constructor), Java will not provide the default one anymore. If you need it, then you need to explicitly create it
+
+DIFFERENCES OF METHODS AND CONSTRUCTOR
+-Method can be static while constructor cannot
+-Method can be void or return while constructor cannot
+
+SIMILARITIES
+-both can take arguments
+-both overloaded
+
+
+
+Zero argument 		-> no information
+House h1 = new House();
+
+Five arguments 		-> All the five info
+House h2 = new House("Brown", 123000, 2023, "Miami", true);
+
+
+
+If I want to create House object only with price and year information
+-I need to create 2 args constructors - price and year
+
+
+
+
+
+
