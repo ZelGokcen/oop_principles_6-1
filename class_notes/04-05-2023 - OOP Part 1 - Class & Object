@@ -1,0 +1,191 @@
+
+
+04-05-2023 - OOP Part 1 - Class & Object
+
+RECAP:
+
+Class: It is a template-prototype-blueprint where we can create many object
+Object: Instance of a class
+
+Class members:
+	1. instance variables - attributes - fields - states
+	2. constructors
+	3. methods
+	4. blocks
+
+
+What Car should have?
+-instance(object) variables
+
+
+class Car{
+
+	public Car(){
+
+	}
+
+	//2-args constructor
+	public Car(String make, String model){
+		this.make = make;
+		this.model = model;
+	}
+
+
+	//4-args constructor
+	public Car(String make, String model, int year, double price){
+		this(make, model);
+		this.year = year;
+		this.price = price;
+	}
+
+
+	int year;
+	String make; 
+	String model;
+	double price;
+
+	@Override
+	public String toString(){
+		return .......;
+	}
+}
+
+
+By defining the class level instance variables, you are giving future object details.
+
+NOTE: this keyword refers to the current object that is being created
+this() refers to your custom constructor and it can be used to chain constructors
+
+
+HOW DO WE CREATE AN OBJECT FROM A CLASS?
+-I need to use new keyword with the constructor of the class
+-Java will always provide us the default constructor which is zero arg (no arguments) and it is hidden by default.
+-Once you create your own constructor, you will lose the default one and you cannot create objects with default constructor anymore. If you already created one before, it will cause compiler error.
+
+Car car1 = new Car(); // You will get error if you do not reveal default
+
+System.out.println(car1); // default values
+
+-To be able to see car1 attribute values, you need to override toString() method in your template
+
+Car car2 = new Car("BMW", "X5"); // works
+
+Car car3 = new Car("Honda", "Civic", 2023, 40000); // 
+
+
+
+IT -> Information Technologies
+
+DATA: information
+We need to store data in different variables to be able to run programs and create applications.
+
+25 	-> int
+"John" 	-> String
+10.5 	-> double
+
+
+Phone{
+	brand: "iPhone",
+	OS: "IOS",
+	storage: 64, 				-> Phone
+	color: "Silver",
+	price: 1000.0
+}
+
+
+class Phone{
+	String brand;
+	String OS;
+	int storage;
+	String color;
+	double price;
+
+	public void call(){
+		//way of calling
+	}
+
+	public void text(){
+		// way of texting
+	}
+}
+
+
+class Human {
+	String fName;
+	String lName;
+	int age;
+	LocalDate DOB;
+	String POB; 
+}
+
+
+
+
+WHY WE DO CREATE CLASSES AND OBJECTS?
+-Object-Oriented programming: putting real life object into programs
+instance variables: what they have
+methods: what they can do - behaviors of the object
+
+
+
+
+Bank
+
+class SavingAccount{
+	double balance;
+	long accountNumber;
+	String fullname;
+
+
+	deposit(){
+
+	}
+
+
+	withDraw(){
+
+	}
+}
+
+
+Telecommunication
+
+class Account{
+	String phoneNumber;
+	AccountType accountType;
+
+}
+
+
+LOCAL VARIABLES VS INSTANCE VARIABLE
+instance variable: these are class level and defines the attributes of the object
+local variable: these are the ones you used in a main method, any other method, the ones that you get as an argument, used in a loop, if-else or switch statement
+
+
+
+class Fruit{
+	boolean hasColor = true;
+	double price;
+	String name;
+	String taste;
+	String color;
+}
+
+
+final variable: this is the instance variable has a initial value and can never be changed. It can be considered as constant.
+-when you decide to make an instance variable final, first you need to initialize it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
