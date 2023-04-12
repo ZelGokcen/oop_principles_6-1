@@ -1,0 +1,187 @@
+
+
+
+04-11-2023 - OOP Part 1 - Class Members
+
+RECAP:
+
+OOP: Object-Oriented Programming
+
+putting all the real life objects into programming
+
+class: blueprint that allows us to create instances
+object: instance of a class
+
+Class members:
+	1. constructor: it is special method used to instantiate objects
+	2. instance variables - fields: defining object characteristics
+	3. methods: functions of the object
+	4. blocks: help us to run a block before object getting created
+
+
+What student has?	-> instance variables
+What student does? 	-> method
+
+public class Student{
+	
+	//This is our default constructor
+	public Student(){
+
+	}
+
+
+	//Overloading constructor
+	public Student(String fullName, int age){
+		this.fullName = fullName;
+		this.age = age;
+	}
+
+
+	//Instance variables
+	String fullName;
+	int age;
+	static final String course = "Software Engineer in Test";
+
+
+	//Methods
+	public void study(){
+
+	}
+
+	public int getAge(){
+		return this.age;
+	}
+
+
+	public static String getCourse(){
+		return course;
+	}
+
+}
+
+
+
+CREATING MANY OBJECTS
+Student s1 = new Student("John Doe", 45);
+Student s2 = new Student("Jane Doe", 45);
+Student s3 = new Student("Alex Smith", 25);
+Student s4 = new Student("Jessie Morgan", 18);
+
+
+
+System.out.println(s1.fullName); // John Doe
+
+s1.getAge(); // 45
+s2.getAge(); // 45
+
+System.out.println(Student.course);
+
+Local variable vs Instance variable
+Instance variable: these are class level and defines the object's features
+Local variable: these are the ones used in any block like if-else-switch-method and so on.
+
+
+this keyword: it refers to the current object
+
+
+
+static method: belongs to class and can be invoked with the class name
+non-static method: belongs to object and can be invoked with an object
+
+
+static instance variables: when one instance variables can be accepted for all the objects, it makes sense to have it as a static variable. In this case, it will be a class information and can be invoked with the class name.
+
+
+final instance variables: this means instance variable value is given and no one can change it in their programs.
+
+
+
+static instance variable or method: accessing members with className or object
+final instance variables: being able to change the value or not
+
+
+class String{
+	members
+}
+
+
+String.toLowerCase(); // compliler error because toLowerCase() method is non-static
+
+
+String name = "John";
+
+name.toLowerCase();
+
+4 bytes -> large number
+
+Integer.MAX_VALUE = 5; // compiler error because MAX_VALUE is a final variable
+
+
+
+CONSTRUCTOR:
+-it is the class member allowing to create objects
+-You will be provided a default contructor once you create the object and it is hidden by defualt
+-It looks like method but it cannot void or return type
+-We can overload constructor with arguments just like methods
+-Constructor can never be final 
+-Constructor can never be static
+-Constructor name should always be same as the class name
+
+
+class Teacher{
+
+	public Teacher(){
+
+	}
+
+
+}
+
+
+
+2 classes may have relationship
+Student 	Teacher
+Author 		Book 			HAS A RELATIONSHIP
+Person 		Country
+
+
+Dog Huskey
+Car GermanCar 		IS A RELATIONSHIP
+Animal Cat
+
+
+
+
+
+class Country{
+	String name;
+	int population;
+}
+
+
+
+BLOCKS
+instance block: is used to run a block of code for each object being created
+{
+	
+}
+
+
+***
+static block: is used to run a block of code even before main method or any other code. It runs only once.
+
+static {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
