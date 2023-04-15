@@ -12,9 +12,10 @@ public class Animal {
         System.out.println("STATIC BLOCK IS RUNNING");
     }
 
-
-
-
+    @Override
+    protected void finalize() {
+        System.out.println("A Garbage collection happened here!!!");
+    }
 
     public static void main(String[] args) {
         Animal a1;

@@ -1,0 +1,96 @@
+
+
+
+04-15-2023 - Stack & Heap | Mutability
+
+
+Stack: it is where methods, local variables (object references) are stored.
+
+Heap: it is where all the object are stored. And it has a special area called as String Pool where strings are stored.
+
+
+String pool: Special area in the heap that stores all the String object values. 
+NOTE: You will never get duplicates in this area.
+
+
+
+Comparing strings with == vs equals() method?
+-NEVER use == to compare strings
+-We can only compare primitives with ==
+-To compare strings we have to use equals() or equalsIgnoreCase() methods
+
+== does not compare values. It compares the locations
+equals() or equalsIgnoreCase() methods compare the values of strings
+
+
+Garbage Collection: it is the process of destroying all the object that lost the reference in the heap.
+
+
+How does it work?
+-It works implicitly - automatically
+-You can do it explicitly as well with 2 different ways
+	1. System.gc() method
+	2. Runtime.getRunTime().gc() method
+	NOTE: When you it explicitly, it may or may not do the garbage collection.
+
+
+What is finalize() method?
+-It is a method used for proper garbage collection.
+
+
+What is final, finalize, finally in Java?
+-final is a modifier used for instance variables, methods, class
+	-final instance variables: constant - cannot be changed
+	-final method: cannot be overridden
+	-final class: cannot be inherited - cannot be parent class
+
+-finalize() is a method used for proper garbage collection
+-finally is a block used for exception handling
+
+
+
+Mutable:
+Immutable:
+
+
+
+
+String str = "Abc";
+How many objects are created with above line? 1
+
+
+String s = new String("Hello");
+How many objects are created with above line? 2
+
+
+
+String s1 = "Hello";
+String s2 = "Hello";
+String s3 = "Hello";
+How many objects are created with above lines? 1
+
+
+
+
+String str1 = "Adam";
+String str2 = "Adam";
+String str3 = "Adam ";
+String str4 = "ADAM";
+String str5 = "adam";
+How many objects are created with above lines? 4
+
+
+
+String name1 = new String("Adam"); // 2
+String name2 = "Adam";
+How many objects are created with above lines? 2
+
+
+
+
+
+
+
+
+
+
