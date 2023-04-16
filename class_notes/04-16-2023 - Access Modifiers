@@ -134,3 +134,77 @@ class A{ // cannot be static
 
 sub class -> child class
 
+
+Tuesday:
+KAHOOT: 5 people +
+OOP Class Members
+Memory management - mutability
+Access Modifiers
+
+
+
+
+
+OOP class-object
+	-OOP Class Members
+	-Memory management - mutability
+	-Access Modifiers
+
+
+
+
+OOP Principles
+1. Encapsulation : data privacy, instance variables
+2. Inheritance : parent-child -> code reusability
+3. Abstraction : hiding implementation but showing functionality
+4. Polymorphism : one object in many shapes
+
+
+
+
+Collections
+	-Arrays
+	-List: ArrayList, LinkedList, Vector
+	-Set: HashSet, LinkedHashSet, TreeSet
+	-Map: HashMap, LinkedHashMap, TreeMap, Hashtable
+
+
+REST:
+Exceptions
+Fundamentals
+
+
+
+Recursion, Lambda, Streams, Time APIs, Enums, RegEx, Functional Programming, SpringBoot.......
+
+
+
+
+Hackerrank
+Leetcode
+Google -> What are the most asked Java Whiteboard interview questions
+
+
+
+
+What is encapsulation?
+How do you achieve encapsulation?
+Why do you use encapsulation?
+Where did you use encapsulation in your previous projects?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
