@@ -87,8 +87,8 @@ How many objects are created with above lines? 2
 
 
 Mutability:
-Mutable: cannot be changed - example: String
-Immutable: can be changed - example: StringBuilder/StringBuffer
+Mutable: can be changed - example: StringBuilder/StringBuffer
+Immutable: cannot be changed - example: String 
 
 
 
