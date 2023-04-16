@@ -1,0 +1,136 @@
+
+
+
+04-16-2023 - Access Modifiers
+
+
+NOTE: This topic is related to accessibility of the classes and the class members.
+
+CLASS MEMBERS:
+1. constructor
+2. instance variables
+3. methods
+4. block
+
+public class
+public constructor
+public instance variables
+public methods
+
+public access modifier: it is the most accessible modifier.
+
+
+4 Access Modifiers
+public 		-> most accessible - anywhere in the project
+protected
+default 	-> accessible only in the same package
+private 	-> least accessible - accessible only in the same class
+
+
+
+2 Non-Access Modifiers
+final 		-> modification restriction
+static		-> access with class of the object
+
+
+
+
+Class Modifiers
+1. public classes: You can access and instantiate this class anywhere in the project.
+2. default classes: You can access and instantiate this class
+only in the same package.
+
+
+NOTE: A java class can be either public or default
+IT CANNOT BE protected or private
+
+
+
+Constructor Modifiers
+1. public constructor: You can create object using public constructor anywhere in the project.
+	NOTE: If your constructor is public but your class is default, then class access modifier will override the rule and you can create objects only within the same package.
+
+2. protected constructor: You can create object using default constructor only within the same package. 
+	NOTE: Protected can act like public in case of inheritance.
+	Inheritance: parent-child classes
+
+3. default constructor: You can create object using default constructor only within the same package.
+
+4. private constructor: You can create object using private constructor only within the same class.
+
+
+				protected
+
+			Is there inheritance?
+
+		YES 						NO
+	   public  					  default
+
+
+
+Instance Variable Modifiers
+1. public instance variables: these instance variables are accessible anywhere within the project.
+
+2. protected instance variables:these instance variables are accessible only within the same package.
+	NOTE: protected instance variables can be accessed anywhere in case of inheritance.
+
+3. default instance variables: these instance variables are accessible only within the same package.
+
+4. private instance variables: these instance variables are accessible only within the same class.
+
+
+
+
+Method Access Modifiers
+1. public methods: accessible anywhere in the project.
+2. protected methods: accessible only within the same package but inheritance can make it accessible anywhere in the project.
+3. default methods:accessible only within the same package.
+4. private methods: accessible only within the same class.
+
+
+
+NOTE: class blocks does not take any access modifiers.
+static: executes once before everything else.
+
+static {
+	
+}
+
+instance: executes each time for an object being instantiated.
+{
+	
+}
+
+
+
+final: it is used for classes, methods and instance variables.
+final instance variable: you have to initialize this instance variable and the value cannot be changed.
+final methods: this method cannot be overridden. You cannot change the method body.
+final class: this class cannot be a parent.
+
+
+static: it is related to accessing class members either with the className or the object name.
+
+static instance variables: can be invoked with class name
+static methods: can be invoked with class name
+
+non-static instance variables: can be invoked with an instance
+non-static methods: can be invoked with an instance
+
+NOTE: Constructors and blocks are not considered for static and final keyword.
+
+
+CAN CLASS BE STATIC?
+-The class cannot be static but programming languages allows us to create classes within the classes. In this case, we can name them as outer class and inner class. Inner class becomes a member of outer class and it can be static.
+
+
+class A{ // cannot be static
+	
+	class B{ // can be static
+
+	}
+}
+
+
+sub class -> child class
+
