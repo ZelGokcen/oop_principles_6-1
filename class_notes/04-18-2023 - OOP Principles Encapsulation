@@ -1,0 +1,78 @@
+
+
+
+04-18-2023 - OOP Principles Encapsulation
+
+
+OOP Principles:
+1. Encapsulation -> data privacy (instance variables)
+2. Inheritance -> parent-child relationship - code reusability
+3. Abstraction -> hiding the implementation and showing the functionality
+	a. abstract classes
+	b. interfaces
+4. Polymorphism -> one object in many shapes
+
+
+What is _____? Definition
+How do you achieve _______? 
+Why do we do ________? Advantages - disadvantages
+
+
+1. ENCAPSULATION
+Definition: providing data privacy or security
+Achivement: Make the instance variable private and provide indirect access with public getter and setter
+WHY: 
+	-prevents the direct access to instance variables (data)
+	-better control of instance variables (data)
+	-flexibility to provide read-only and write-only access to data
+	-increasing the security of data
+
+
+
+public class Company{
+	
+	private String name;
+	private String address;
+	private String phone;
+
+	public String getName(){
+		return name;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+}
+
+
+
+
+// Anywhere in the project
+public static void main(String[] args){
+	Company company = new Company();
+	company.name = "Apple"; // set - restrict this
+
+	System.out.println(company.name); // get
+
+}
+
+
+GETTERS
+-it is usually return type
+-it is usually non-static
+-it is usually named as getField()
+-it does not take arguments most of the time
+
+
+
+SETTERS
+-it is usually void type
+-it is usually non-static
+-it is usually named as setField()
+-it takes arguments most of the time
+
+
+
+
+
+
