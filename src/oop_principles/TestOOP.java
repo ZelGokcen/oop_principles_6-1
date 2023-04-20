@@ -2,6 +2,7 @@ package oop_principles;
 
 import oop_principles.encapsulation.Clock;
 
+
 public class TestOOP {
     public static void main(String[] args) {
         Clock clock1 = new Clock();

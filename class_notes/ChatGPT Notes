@@ -1,0 +1,64 @@
+
+
+Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects,"
+which can contain data and code to manipulate that data. In Java, a class is a blueprint for
+creating objects that have certain properties and behaviors.
+
+To create a class in Java, you use the class keyword followed by the class name. For example,
+the following code defines a simple Person class:
+
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+}
+
+
+
+This Person class has two instance variables (name and age), a constructor that
+initializes these variables, getter and setter methods for accessing and modifying the variables, and a sayHello() method that prints a greeting to the console.
+
+Once you have defined a class, you can create objects of that class using the new
+keyword, like so:
+
+Copy code
+Person person1 = new Person("Alice", 25);
+Person person2 = new Person("Bob", 30);
+
+
+
+These two lines of code create two Person objects,
+one with the name "Alice" and age 25, and another with the name
+"Bob" and age 30. You can then call methods on these objects to manipulate their data and behavior:
+
+person1.setName("Alice Smith");
+person1.sayHello();
+person2.sayHello();
+
+These lines of code would change the name of person1 to "Alice Smith"
+and print out greetings from both person1 and person2.
+

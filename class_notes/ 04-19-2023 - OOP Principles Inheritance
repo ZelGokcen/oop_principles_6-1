@@ -1,0 +1,182 @@
+
+
+04-19-2023 - OOP Principles Inheritance
+
+-Java is a OOP language: these languages put the real life object into programs and they are used to build application
+
+AccountHolder for Amazon, Meta, Instagram, Twitter, LinkedIn, Netflix
+
+class: blueprint where many object created from
+object: instance of the class
+
+CLASS MEMBERS:
+instance variables - fields - attributes - states
+constructors
+methods - functions
+blocks
+
+ACCESS MODIFIERS: used for class, constructors, fields and methods
+private: the most restricted (only the same class)
+default: used only in the same package
+protected: used only in the same package (accessible outside the package in case of inheritance)
+public: accessible everywhere in the project
+
+
+OOP PRINCIPLES: is to make code more reusable, provide data-security and ease the work of programmer
+
+1. Encapsulation: provides data-security for the fields
+2. Inheritance: provides code reusability with parent-child relationship
+3. Abstraction: provides the functionality but hides the implementation from the user - methods
+4. Polymorphism: one object in many shapes
+
+ENCAPSULATION: provides data-security for the fields
+
+How do we achieve encapsulation?
+1. make the instance variables private
+2. provide public getters and setters which are used to read and write information to instance variables indirectly
+
+
+Why do we do encapsulation?
+-data privacy
+-better control of instance variables - read or write or both
+-flexibility
+
+
+GETTERS - SETTERS
+-They are used to read or write instance variables
+-getter is usually return type method while setter is void
+-both are usually non-static
+-setter usually takes an argument and it sets it for the instance variable while getter does not take arguments most of the time
+
+
+
+INHERITANCE: provides code reusability with parent-child relationship
+-In Java, each class automatically inherit from the Object class
+-So, the Object class is the parent of all classes
+
+
+How do you achieve inheritance?
+-We use extends keyword to achieve inheritance between 2 classes.
+
+
+Is there a way to prevent inheritance?
+-final class cannot be a parent - final keyword is used to prevent inheritance.
+
+
+Why do we do inheritance?
+-code reusability
+
+
+
+public class Person{
+
+}
+
+
+public class Programmer extends Person{
+
+}
+
+
+public class Singer extends Person{
+
+}
+
+
+-In this case, Person is the parent class and Programmer is the child class
+	-child class = subclass
+	-parent class = super class = base class
+
+-Programmer will inherit all the public and protected instance variables and method of the Person class.
+-default instance variables and methods can be inherited only if both classes are in the same package.
+-Inheritance is only one way and it is from parent to child. Parent cannot use child instance variables and methods
+
+
+CAN ONE CLASS EXTEND TO MANY OTHER CLASSES?
+-In Java, one class can extends to ONLY class
+-HOWEVER, one class can be extended by many other child classes
+
+
+class A{
+
+}
+
+
+class B extends A{
+
+}
+
+
+class C extends B{
+
+}
+
+B inherits from A
+C inherits both from B and A
+
+
+
+
+this vs this() - super vs super()
+-this is used as a reference to current class object
+-super is used as a reference to parent class object
+-this() is used to chain constructor of the same class
+-super() is used to chain constructor of the parent class
+
+
+
+What is method overloading vs overriding?
+-overloading: 2 or more methods in the same class with the same name but either different types of argument or different numbers arguments
+-overriding: child class overridding the body of the parent class. It is also same name
+
+NOTE: Overloading always happens in the same  class while overriding always happens in the child class (a different class)
+-Overriding is about changing the method body
+
+
+class A{
+
+	public void method(){
+		// a block of code
+	}
+
+	public void method(String str){
+		// a block of code
+	}
+
+	public void method(int number){
+		// a block of code
+	}
+
+	public void method(String str, String str){
+		// a block of code
+	}
+}
+
+In the class A, you can clearly see there a method created and overloaded 3 times with different arguments.
+
+
+class B extends A{
+
+	@Override
+	public void method(){
+		// a block of code - this block does not make sense if it is same // as the parent block
+	}
+}
+
+
+
+
+Can you overload an overriden method?
+-YES
+
+
+Can a method be overloaded and overridden at the same time?
+-YES
+
+
+Can we overload main() method?
+-YES as long as you used the same name and provide different argument
+
+
+
+Overloading vs overriding?
