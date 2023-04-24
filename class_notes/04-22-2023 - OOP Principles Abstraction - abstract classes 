@@ -1,0 +1,256 @@
+04-22-2023 - OOP Principles Abstraction - abstract classes
+
+
+Class: template
+Object: instance
+
+class Orange{
+
+}
+
+Orange orange1 = new Orange();
+Orange orange2 = new Orange();
+
+
+Class members:
+constructor: class member that allows to create objects
+instance variables: class level information for the instances
+methods: behaviors - functions of the instance-class
+block: used to run some block of code before everything else or for each object being created
+	static block: code before everything else - one time
+	instance block: for each object
+
+
+
+Access Modifiers:
+private -> class protected
+default -> package protected
+protected -> package protected but can be used anywhere with inheritance
+public -> anywhere in the project
+
+
+
+OOP Principles
+1. Encapsulation: it is about data security for instance variables
+2. Inheritance: increasing code reusability by providing parent-child relationship
+3. Abstraction: hiding the implementation but showing the functionality
+4. Polymorphism: one object in many shapes
+
+
+
+ENCAPSULATION:
+How do we achieve?
+	1. make instance variables private: it prevents direct access
+	2. generate public getters and setters: it provides indirect access
+
+Why do we do encapsulation?
+-better control mechanism over instance variables
+-flexibility of providing read or write or both
+	read-only: provide getters and do not provide setters
+	write-only: provide setters and do not provide getters
+	both read and write access: provide both getters and setters
+-increasing the data security
+
+
+
+INHERITANCE:
+How do we achieve: we use extends keyword
+
+RULES:
+- child class = subclass
+- parent class = super class = base class
+- Every class by default is the child of Object class
+- child class can extend to ONLY one parent class
+- parent class can be parent to many child classes
+- if you don't want a class to be a parent, you can use final keyword to prevent the class to be inherited
+- access modifiers will decide what could be inherited
+
+child-parent in the same package 	child-parent in the separate packages
+-public methods and fields 			-public methods and fields
+-protected methods and fields 		-protected methods and fields
+-default methods and fields
+
+
+-constructors can be reusable in case of inheritance and child class can reference from parent instance variables and constructors
+
+this vs this()
+super vs super()
+this vs super
+this() vs super()
+
+this: refers to the current class object
+super: refers to the parent class object
+this(): allows us to chain one constructor of the current class in another constructor
+super(): allows us to chain one constructor of the parent class in another constructor of child class
+
+
+What is IS-A-RELATIONSHIP?
+-It means inheritance: parent child
+	German Car is a Car
+	Car is a Vehicle
+	Vehicle is an Object
+
+
+What is HAS-A-RELATIONSHIP?
+	Employee - Company
+	Author - Book
+	Car - Engine
+
+
+
+METHOD OVERRIDING: Child class changing the method body for the inherited method from the method. Child having their own implementation to a parent class method.
+
+Is there a way to prevent method overriding?
+-Yes, make it final. So, final methods in the parent class CANNOT be overridden in the child classes.
+
+
+Overloading  					Overriding
+- same class 					- child class
+- different args 				- different body - implementation
+- same name 					- same name
+- no annotation 				- optional @Override annotation
+- no prevention 				- prevention with final keyword
+- return type can be different  - return type MUST be same
+- can have any access modifier 	- can either be same or more accessible
+- static polymorphism 			- dynamic polymorphism
+
+
+NOTE: You can overload one method in the same class and override it in the child at the same time
+
+
+
+class A{
+	public void method(){
+		// parent body
+	}
+
+	public void method(String s){
+		// body
+	}
+}
+
+
+class B extends A{
+	@Override
+	public void method(){
+		// child body
+	}
+}
+
+
+B is a child class of A -> B can inherit methods and instance variables from A
+
+A a = new A();
+B b = new B();
+
+a.method(); // parent body
+b.method(); // child body
+
+
+
+
+ABSTRACTION:
+-Abstraction cannot be achieved without inheritance and it only makes sense when implemented together with inheritance.
+-Abstract classes are completely created for the use of child classes.
+-Abstract class cannot be instantiated. You CANNOT create objects from abstract classes.
+-Abstract methods cannot have a body.
+
+How to make a class abstract?
+- use abstract keyword
+
+
+How to create an abstract method?
+- use abstract keyword and provide no body!
+- Abstract methods cannot have a body.
+
+
+Can abstract class be final at the same time?
+-final class: this class cannot have child
+-abstract class: this class is created for child
+-NOO, a class cannot be abstract and final at the same time
+NOTE: Illegal combination of modifiers
+
+
+Can abstract method be final at the same time?
+-final method: this method cannot be overridden
+-abstract method: this method is created to be overridden
+-NOO, a method cannot be abstract and final at the same time
+NOTE: Illegal combination of modifiers
+
+
+Can abstract method be static at the same time?
+-static method: this method belongs to class and can be invoked with the class name but what body will be executed if you do so.
+-abstract method: this method does not have body and created to be overridden in the child class.
+-NOO, a method cannot be abstract and static at the same time
+NOTE: Illegal combination of modifiers
+
+
+Can abstract class have non-abstract methods?
+-Yes, these methods has body and known as regular concrete methods.
+
+
+Abstract class cannot be instantiated but can we have constructor in the abstract class? Can we also overload the constructor?
+-YES, the goal is to be used by child classes again
+
+
+
+public abstract class Car{
+	public abstract void drive();
+
+	public abstract void stop();
+}
+
+Car class states that it is abstract and it has 2 abstract methods which have no body.
+RULE: Car class states if any class is going to inherit from it, they MUST provide the method bodies. THEY MUST OVERRIDE these methods.
+
+
+
+class Audi extends Car{ // compiler error saying override
+	// it is MUST for Audi to override the drive and stop methods
+
+	@Override
+	public void drive(){
+		// method body
+	}
+
+	@Override
+	public void stop(){
+		// method body
+	}
+}
+
+
+
+
+
+
+			Parent class: Phone
+			call(); 		text();
+
+
+Child classes: Samsung, iPhone, Nokia
+
+
+
+class abstract Samsung extends Phone{
+	someFunction();
+}
+
+
+
+
+
+INTERFACE:
+-It is another way of achieving abstraction and used for additional functionalities.
+
+MUST HAVE: call(), text(), ring(), calculates()
+The must functions can be designed in an abstract class.
+
+
+takePhoto(), recordVideo(), playMusic(), connectWiFi(), connectBluetooth()
+
+
+
+
+
+
